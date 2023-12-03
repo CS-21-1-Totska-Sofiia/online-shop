@@ -1,5 +1,3 @@
-
-import type { mergeProps } from 'vue';
 <script setup lang="ts">
 import { onMounted} from 'vue';
 import {useCategoryStore} from '../stores/category.js';

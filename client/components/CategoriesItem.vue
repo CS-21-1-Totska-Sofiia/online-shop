@@ -1,5 +1,3 @@
-
-import type { NuxtComponentIndicator } from 'nuxt/dist/app/composables/component';
 <script setup lang="ts">
 
 const props = defineProps({
