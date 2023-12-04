@@ -13,17 +13,24 @@ const props = defineProps({
     }
 });
 
+const getLink = (category, id) => {
+    return `http://localhost:5010/goods-${category}/${id}`;
+}
+
 </script>
 
 
 <template>
     <div v-if="store.fetched">
         <div v-for="i in props.goods.length" class="good-wrapper">
-            <img v-if="props.goods[i-1].urlObj" :src="props.goods[i-1].urlObj">
+            <img v-if="props.goods[i-1].urlMinObj" :src="props.goods[i-1].urlMinObj">
             <div class="good-data">
                 <p>{{ props.goods[i-1].name }}</p>
                 <p>{{ props.goods[i-1].price }}$</p>
             </div>
+            <NuxtLink :href="getLink(props.goods[i-1].partitionKey, props.goods[i-1].rowKey)">
+                <p>Show deatils</p>
+            </NuxtLink>
         </div>
     </div>
 </template>
